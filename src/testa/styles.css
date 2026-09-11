@@ -224,8 +224,7 @@ section[id] { scroll-margin-top: 32px; }
 .map-figure figcaption { padding-top: 16px; color: var(--muted); font-size: .875rem; line-height: 1.5; }
 
 .community-comments { padding-top: 56px; border-top: 1px solid var(--line); }
-.community-comments .section-heading { margin-bottom: 18px; }
-.comments-note { margin: 0 0 28px; color: var(--muted); font-size: .875rem; line-height: 1.6; }
+.community-comments .section-heading { margin-bottom: 28px; }
 .comments-window { overflow: hidden; padding: 4px 0 20px; scrollbar-width: none; }
 .comments-window::-webkit-scrollbar { display: none; }
 .comments-track { animation: comments-scroll 72s linear infinite; }
@@ -233,15 +232,14 @@ section[id] { scroll-margin-top: 32px; }
 @keyframes comments-scroll { to { transform: translateX(-50%); } }
 .comments-track, .comments-group { display: flex; width: max-content; }
 .comments-group { gap: 20px; padding-right: 20px; }
-.comment-card { width: clamp(256px, 28vw, 356px); margin: 0; padding: 28px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.comment-card { width: clamp(280px, 32vw, 400px); margin: 0; padding: 28px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
 .comment-card figcaption { display: flex; align-items: center; gap: 13px; }
 .comment-card strong { display: block; font-size: .9375rem; font-weight: 500; }
-.comment-role { display: block; margin-top: 5px; color: var(--muted); font-size: .75rem; }
 .comment-avatar { display: grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: var(--clay); color: #604837; font-family: var(--serif); font-size: .9375rem; }
 .avatar-1 { color: #4f594b; background: #dce2d4; }
 .avatar-2 { color: #555268; background: #e0dce8; }
 .comment-card blockquote { margin: 24px 0 0; }
-.comment-card blockquote p { margin: 0; font-family: var(--serif); font-size: 1.25rem; line-height: 1.5; letter-spacing: -.015em; }
+.comment-card blockquote p { margin: 0; font-family: var(--serif); font-size: 1.125rem; line-height: 1.6; letter-spacing: -.015em; }
 
 @media (min-width: 1440px) {
   .hero { gap: 88px; }
