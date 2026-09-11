@@ -95,22 +95,6 @@ npm install
 npm run dev
 ```
 
-### Design preview at `/testa/`
-
-The Claude-inspired design is available at
-[`https://theseus-labs-rsi.github.io/testa/`](https://theseus-labs-rsi.github.io/testa/).
-The existing homepage remains at `/`. Both pages share research records and
-public assets; the preview's components and styles live in `src/testa/`.
-
-Run `npm run dev` and open `/testa/` to edit the preview. Run `npm run build`
-followed by `npm run preview` to check the production output. Vite builds both
-`index.html` and `testa/index.html` into `dist/`, so the existing Pages workflow
-publishes both paths together when the PR is merged into `main`.
-
-Keep the trailing slash on `/testa/` links. Report navigation uses hash routes,
-for example `/testa/#/research/rsi-survey-2026`; assets are shared from
-`../brand/` and `../research/` relative to the preview page.
-
 ## 📬 Follow the Work
 
 - Visit the [Theseus Lab website](https://theseus-labs-rsi.github.io/)
@@ -122,10 +106,3 @@ for example `/testa/#/research/rsi-survey-2026`; assets are shared from
 <div align="center">
   <sub>Theseus Lab · Systems that improve how they improve.</sub>
 </div>
-
-
-### Design preview at `/testb/`
-
-The Hunyuan-inspired design is available at [Theseus Lab /testb/](https://theseus-labs-rsi.github.io/testb/). It includes the dashed logo with waves, research detail pages, and scrolling sample community comments. The homepage and `/testa/` retain their existing designs.
-
-Run `npm run dev` and open `/testb/`. Source files live in `src/testb/`; Vite builds `testb/index.html` alongside the existing pages. Public assets use `../brand/` and `../research/`. Use the trailing slash, including for hash routes such as `/testb/#/research/rsi-survey-2026`.
