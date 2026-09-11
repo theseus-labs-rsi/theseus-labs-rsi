@@ -226,9 +226,11 @@ section[id] { scroll-margin-top: 32px; }
 .community-comments { padding-top: 56px; border-top: 1px solid var(--line); }
 .community-comments .section-heading { margin-bottom: 18px; }
 .comments-note { margin: 0 0 28px; color: var(--muted); font-size: .875rem; line-height: 1.6; }
-.comments-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; padding: 10px 15px; flex-shrink: 0; border: 1px solid var(--line); border-radius: 7px; color: var(--ink); background: transparent; font: inherit; font-size: .8125rem; cursor: pointer; }
-.comments-toggle:hover { background: var(--surface); border-color: var(--accent); }
-.comments-window { overflow-x: auto; padding: 4px 0 20px; scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+.comments-window { overflow: hidden; padding: 4px 0 20px; scrollbar-width: none; }
+.comments-window::-webkit-scrollbar { display: none; }
+.comments-track { animation: comments-scroll 72s linear infinite; }
+.comments-window:hover .comments-track, .comments-window:focus-visible .comments-track { animation-play-state: paused; }
+@keyframes comments-scroll { to { transform: translateX(-50%); } }
 .comments-track, .comments-group { display: flex; width: max-content; }
 .comments-group { gap: 20px; padding-right: 20px; }
 .comment-card { width: clamp(256px, 28vw, 356px); margin: 0; padding: 28px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
@@ -329,5 +331,7 @@ section[id] { scroll-margin-top: 32px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
+  .comments-track { animation: none; }
+  .comments-window { overflow-x: auto; }
   .comments-copy { display: none; }
 }
