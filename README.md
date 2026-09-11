@@ -16,3 +16,5 @@ npm run dev
 ## 部署
 
 推送到 `main` 分支会触发 `.github/workflows/deploy-pages.yml`，构建产物将发布到 GitHub Pages。
+
+正式地址：<https://theseus-labs-rsi.github.io/>
