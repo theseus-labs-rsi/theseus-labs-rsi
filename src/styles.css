@@ -197,7 +197,7 @@ main:focus { outline: none; }
 .section-heading.team-heading > p { max-width: 350px; padding-top: 30px; font-size: 1rem; line-height: 1.75; }
 .team-featured { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; }
 .team-profile { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 28px; padding: 32px 0; border-top: 1px solid var(--line); }
-.team-portrait { width: 132px; height: 160px; object-fit: cover; border-radius: 6px; background: var(--surface); }
+.team-portrait { width: 132px; height: 160px; object-fit: cover; border-radius: 6px; filter: grayscale(1); background: var(--surface); }
 .team-profile h3, .team-member h4 { margin: 0; font-family: var(--serif); font-size: 1.75rem; font-weight: 400; line-height: 1.25; letter-spacing: -.025em; }
 .team-profile h3 span, .team-member h4 span { display: block; margin-top: 7px; color: var(--muted); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: .8125rem; letter-spacing: .08em; }
 .team-position { margin: 16px 0 12px; color: var(--accent); font-size: .8125rem; line-height: 1.65; }
