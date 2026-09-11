@@ -1,0 +1,13 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+*.local
+.env*
+.sites-runtime/
+.openai/
+.wrangler/
+.agents/
+.codex/
+outputs/
+work/
