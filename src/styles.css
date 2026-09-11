@@ -44,15 +44,12 @@ img { display: block; max-width: 100%; }
 .primary-link { display: inline-flex; align-items: center; justify-content: center; gap: 14px; margin-top: 34px; min-height: 46px; padding: 0 20px; background: var(--ink); color: #fff; font-size: 14px; font-weight: 500; }
 .primary-link:hover { background: var(--blue); }
 
-.hero-graphic { width: min(38vw, 460px); aspect-ratio: 1; justify-self: center; position: relative; color: #68716e; }
-.graphic-box { position: absolute; inset: 15%; border: 1px dashed #aeb8b4; transform: rotate(45deg); }
-.graphic-axis { position: absolute; background: #919b97; }.axis-x { height: 1px; left: 5%; right: 5%; top: 50%; }.axis-y { width: 1px; top: 5%; bottom: 5%; left: 50%; }
-.graphic-ring { position: absolute; inset: 25%; border: 1px solid #4e5955; border-radius: 50%; }
-.graphic-line { position: absolute; left: 50%; top: 50%; width: 42%; height: 1px; background: var(--ink); transform: rotate(-39deg); transform-origin: left; }
-.dot { position: absolute; width: 12px; height: 12px; border: 1px solid var(--ink); border-radius: 50%; }
-.dot-one { left: calc(50% - 6px); top: calc(50% - 6px); background: var(--green); }
-.dot-two { right: 13%; top: 20%; background: #bce9ff; }.dot-three { left: 22%; bottom: 19%; background: #fff6a7; }
-.graphic-word { position: absolute; left: 54%; top: 52%; font: italic 32px/1 Georgia, serif; color: var(--ink); }
+.hero-graphic { width: min(37vw, 470px); aspect-ratio: 1.12; justify-self: center; position: relative; display: grid; place-items: center; }
+.hero-graphic::before { content: ''; position: absolute; inset: 4%; border-radius: 50%; background: radial-gradient(circle, rgba(22,138,244,.13), rgba(200,240,75,.05) 42%, transparent 69%); }
+.hero-graphic img { position: relative; z-index: 2; width: min(84%, 390px); height: auto; }
+.logo-orbit { position: absolute; inset: 13%; border: 1px dashed rgba(45,60,55,.22); border-radius: 50%; transform: rotate(-12deg); }
+.logo-orbit::before, .logo-orbit::after { content: ''; position: absolute; width: 10px; height: 10px; border: 1px solid var(--ink); border-radius: 50%; }
+.logo-orbit::before { top: 8%; right: 17%; background: #bce9ff; }.logo-orbit::after { left: 5%; bottom: 24%; background: var(--green); }
 
 .content-section { max-width: 1320px; margin: 0 auto; padding: 94px clamp(24px, 5vw, 72px); }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 42px; }

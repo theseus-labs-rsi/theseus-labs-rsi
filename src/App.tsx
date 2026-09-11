@@ -31,16 +31,9 @@ function Header() {
 
 function HeroGraphic() {
   return (
-    <div className="hero-graphic" aria-hidden="true">
-      <div className="graphic-box" />
-      <div className="graphic-axis axis-x" />
-      <div className="graphic-axis axis-y" />
-      <div className="graphic-line" />
-      <div className="graphic-ring" />
-      <span className="dot dot-one" />
-      <span className="dot dot-two" />
-      <span className="dot dot-three" />
-      <span className="graphic-word">evolve</span>
+    <div className="hero-graphic">
+      <span className="logo-orbit" aria-hidden="true" />
+      <img src="./brand/full-black.svg" alt="Theseus Lab" />
     </div>
   )
 }
