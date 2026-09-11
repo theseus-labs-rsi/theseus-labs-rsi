@@ -11,7 +11,7 @@
 </div>
 
 <div align="center">
-  <a href="https://theseus-labs-rsi.github.io/theseus-labs-rsi/">
+  <a href="https://theseus-labs-rsi.github.io/">
     <img alt="Website" src="https://img.shields.io/badge/Website-Theseus%20Lab-168af4?logo=googlechrome&logoColor=white" />
   </a>
   <a href="https://arxiv.org/abs/2609.11873">
@@ -69,7 +69,7 @@ Key contributions include:
 - a practical connection between academic RSI research and emerging real-world systems.
 
 **Paper:** [arXiv:2609.11873](https://arxiv.org/abs/2609.11873)  
-**Project page:** [theseus-labs-rsi.github.io/theseus-labs-rsi](https://theseus-labs-rsi.github.io/theseus-labs-rsi/)
+**Project page:** [theseus-labs-rsi.github.io](https://theseus-labs-rsi.github.io/)
 
 ## 🧭 Research and Updates
 
@@ -95,9 +95,25 @@ npm install
 npm run dev
 ```
 
+### Design preview at `/testa/`
+
+The Claude-inspired design is available at
+[`https://theseus-labs-rsi.github.io/testa/`](https://theseus-labs-rsi.github.io/testa/).
+The existing homepage remains at `/`. Both pages share research records and
+public assets; the preview's components and styles live in `src/testa/`.
+
+Run `npm run dev` and open `/testa/` to edit the preview. Run `npm run build`
+followed by `npm run preview` to check the production output. Vite builds both
+`index.html` and `testa/index.html` into `dist/`, so the existing Pages workflow
+publishes both paths together when the PR is merged into `main`.
+
+Keep the trailing slash on `/testa/` links. Report navigation uses hash routes,
+for example `/testa/#/research/rsi-survey-2026`; assets are shared from
+`../brand/` and `../research/` relative to the preview page.
+
 ## 📬 Follow the Work
 
-- Visit the [Theseus Lab website](https://theseus-labs-rsi.github.io/theseus-labs-rsi/)
+- Visit the [Theseus Lab website](https://theseus-labs-rsi.github.io/)
 - Explore the [Theseus Lab GitHub organization](https://github.com/theseus-labs-rsi)
 - Read the [featured RSI report](https://arxiv.org/abs/2609.11873)
 
