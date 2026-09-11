@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, Github } from 'lucide-react'
 import { researchItems, surveyContributions, surveyFindings, type ResearchItem } from './data/research'
 import CommunityComments from './components/CommunityComments'
 import RoadmapFigure from './components/RoadmapFigure'
+import Team from './components/Team'
 
 const githubUrl = 'https://github.com/theseus-labs-rsi'
 const arxivUrl = 'https://arxiv.org/abs/2609.11873'
@@ -42,6 +43,7 @@ function Header() {
         <nav aria-label="Main navigation">
           <a href="#reports">Reports</a>
           <a href="#research">Research</a>
+          <a href="#team">Team</a>
           <a className="nav-github" href={githubUrl} target="_blank" rel="noreferrer">
             GitHub <ArrowUpRight size={14} aria-hidden="true" />
           </a>
@@ -110,6 +112,7 @@ function Home() {
             {projects.map((project) => <ProjectRow key={project.slug} project={project} />)}
           </div>
         </section>
+        <Team />
         <CommunityComments />
       </main>
       <Footer />
