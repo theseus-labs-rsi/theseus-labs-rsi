@@ -122,3 +122,10 @@ for example `/testa/#/research/rsi-survey-2026`; assets are shared from
 <div align="center">
   <sub>Theseus Lab · Systems that improve how they improve.</sub>
 </div>
+
+
+### Design preview at `/testb/`
+
+The Hunyuan-inspired design is available at [Theseus Lab /testb/](https://theseus-labs-rsi.github.io/testb/). It includes the dashed logo with waves, research detail pages, and scrolling sample community comments. The homepage and `/testa/` retain their existing designs.
+
+Run `npm run dev` and open `/testb/`. Source files live in `src/testb/`; Vite builds `testb/index.html` alongside the existing pages. Public assets use `../brand/` and `../research/`. Use the trailing slash, including for hash routes such as `/testb/#/research/rsi-survey-2026`.
