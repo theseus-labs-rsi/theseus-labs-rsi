@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ArrowLeft, ArrowRight, ArrowUpRight, Github } from 'lucide-react'
 import { researchItems, type ResearchItem } from '../data/research'
+import CommunityComments from './CommunityComments'
 
 const githubUrl = 'https://github.com/theseus-labs-rsi'
 const arxivUrl = 'https://arxiv.org/abs/2609.11873'
@@ -94,6 +95,7 @@ function Home() {
             {projects.map((project) => <ProjectRow key={project.slug} project={project} />)}
           </div>
         </section>
+        <CommunityComments />
       </main>
       <Footer />
     </div>
