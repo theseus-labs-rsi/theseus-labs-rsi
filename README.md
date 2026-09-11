@@ -5,8 +5,8 @@
 <div align="center">
   <h3>Building intelligence that can evolve.</h3>
   <p>
-    Theseus Lab studies AI systems that learn from experience, revise their
-    strategies, and improve through verifiable feedback.
+    We study how AI systems turn experience into lasting changes to their
+    capabilities and the mechanisms that guide future improvement.
   </p>
 </div>
 
@@ -29,56 +29,62 @@
 
 ## 👋 About Theseus Lab
 
-Theseus Lab explores **recursive intelligence systems**: AI systems that can
-turn experience and feedback into persistent improvements—not only in what they
-can do, but also in how they improve next.
+Theseus Lab studies **recursive self-improvement (RSI)**: how experience can
+produce persistent system changes that also affect subsequent improvement.
+Our survey examines what is changed, what successors inherit, and which
+decisions remain under human control.
 
-Our current work follows the path from execution-level adaptation to genuine
-recursive self-improvement. We are especially interested in:
-
-- improvement-execution and improvement-strategy autonomy;
-- experience acquisition and environment adaptation;
-- persistent, testable changes to models, agents, and their surrounding systems;
-- evaluation methods that distinguish temporary performance gains from durable improvement;
-- recursive meta-improvement and the safety of long-horizon self-evolution.
+The Theseus case study explores environment–data–model co-evolution: reconstruct
+environments, identify capability gaps and generate training data, train task
+models, and use stronger models to support further environment iteration.
 
 ## 🔎 Featured Report
 
 ### The Last AI Built by Humans: Toward Genuine Recursive Self-Improvement
 
-Our survey organizes the rapidly growing RSI landscape and traces a development
-roadmap from execution autonomy and strategy autonomy to experience acquisition,
-environment adaptation, and recursive meta-improvement.
-
-It connects research across scientific discovery, embodied intelligence,
-software engineering, and other domains, while identifying the capability gaps
-that still separate current systems from genuine RSI.
+The survey analyzes capability gaps using the **Headroom-Closed Index (HCI)**
+and organizes improvement loops by the decisions entrusted to AI. It connects
+this framework to science, embodied intelligence, software engineering,
+healthcare, and industrial practice.
 
 <div align="center">
   <a href="https://arxiv.org/abs/2609.11873">
-    <img src="public/research/survey-cover-fig.png" alt="Long-horizon evolution map for recursive self-improvement" width="960" />
+    <img src="public/research/roadmap.svg" alt="Five levels of improvement autonomy, with B0 as a non-RSI reference" width="960" />
   </a>
 </div>
 
 Key contributions include:
 
-- a unified view of RSI research across systems, tasks, and update targets;
-- an analysis of current development trends and unresolved research loops;
-- a long-horizon evolution map spanning **L1 Execution**, **L2 Strategy**,
-  **L3 Experience**, **L4 Deployment**, and **L5 Meta-improvement**;
-- a practical connection between academic RSI research and emerging real-world systems.
+- the improvement loop as the unit of analysis: triggers, proposed changes,
+  verification, persistence, and reuse;
+- five levels of responsibility: **L1 improvement execution**, **L2 strategy
+  selection**, **L3 future experience acquisition**, **L4 deployment and
+  environmental adaptation**, and **L5 recursive meta-improvement**;
+- analysis of how revised improvement mechanisms are inherited and reused;
+- connections between academic research and industrial systems.
+
+**B0** marks in-task iteration; **L1–L5** track autonomy over persistent improvement.
+
+Selected findings:
+
+- **Capability gaps (§2.1):** HCI traces uneven progress across ten domains,
+  highlighting remaining headroom in software engineering and tool-using agents.
+- **Theseus workspace study (§5.1, Table 9b):** reconstructing agent workspaces
+  improved aggregate rubric scores by 18.65–39.67 percentage points.
+- **Meta-improvement (§§3.6–3.7):** systems can revise and pass on improvers,
+  evaluators, and research policies, making future improvement mechanisms
+  an object of change.
 
 **Paper:** [arXiv:2609.11873](https://arxiv.org/abs/2609.11873)  
 **Project page:** [theseus-labs-rsi.github.io](https://theseus-labs-rsi.github.io/)
 
+Copy provenance and evidence boundaries are recorded in
+[`docs/copy-sources.md`](docs/copy-sources.md).
+
 ## 🧭 Research and Updates
 
-The website serves as the public index for Theseus Lab. New research projects,
-technical reports, and lab notes will be added as they become ready. Each project
-can have its own focused page while sharing the same visual and editorial system.
-
-The current release intentionally includes open project slots so that lab members
-can publish upcoming work without redesigning the homepage.
+New research projects, technical reports, and lab notes will be added as they
+become ready.
 
 ## 🌐 Website
 

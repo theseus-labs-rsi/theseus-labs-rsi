@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { ArrowLeft, ArrowRight, ArrowUpRight, Github } from 'lucide-react'
-import { researchItems, type ResearchItem } from './data/research'
+import { researchItems, surveyContributions, surveyFindings, type ResearchItem } from './data/research'
 import CommunityComments from './components/CommunityComments'
 import RoadmapFigure from './components/RoadmapFigure'
 
@@ -73,7 +73,7 @@ function Home() {
           <div className="hero-copy">
             <p className="kicker">RECURSIVE SELF-IMPROVEMENT</p>
             <h1 id="hero-title">Building intelligence<br /><em>that can evolve.</em></h1>
-            <p>Theseus Lab studies AI systems that learn from experience, revise their strategies, and improve through verifiable feedback.</p>
+            <p>We study how AI systems turn experience into lasting changes to their capabilities and the mechanisms that guide future improvement.</p>
             <a className="primary-link" href="#reports">Explore our work <ArrowRight size={17} aria-hidden="true" /></a>
           </div>
           <HeroGraphic />
@@ -145,7 +145,6 @@ function ResearchDetail() {
           <header className="detail-hero">
             <p className="section-label">FEATURED REPORT · ARXIV:2609.11873</p>
             <h1>{report.title}</h1>
-            <p className="detail-subtitle">{report.titleEn}</p>
             <p className="detail-lead">{report.summary}</p>
             <div className="detail-actions">
               <a className="primary-link" href={arxivUrl} target="_blank" rel="noreferrer">View on arXiv <ArrowUpRight size={17} aria-hidden="true" /></a>
@@ -156,13 +155,29 @@ function ResearchDetail() {
           <section className="contributions" aria-labelledby="contributions-title">
             <div><p className="section-label">CONTRIBUTIONS</p><h2 id="contributions-title">What this work contributes</h2></div>
             <ol>
-              <li><span>01</span><div><h3>A unified landscape</h3><p>Places RSI work across tasks, systems and update targets into one comparable framework.</p></div></li>
-              <li><span>02</span><div><h3>Signals in the field</h3><p>Synthesizes current directions, capability boundaries and research loops that remain open.</p></div></li>
-              <li><span>03</span><div><h3>A long-horizon map</h3><p>Connects execution, strategy, experience, deployment and meta-improvement into one trajectory.</p></div></li>
+              {surveyContributions.map((contribution, index) => (
+                <li key={contribution.title}><span>0{index + 1}</span><div><h3>{contribution.title}</h3><p>{contribution.description}</p></div></li>
+              ))}
             </ol>
           </section>
 
           <RoadmapFigure detailed />
+
+          <section className="contributions survey-findings" aria-labelledby="findings-title">
+            <div><p className="section-label">KEY FINDINGS</p><h2 id="findings-title">Insights from the survey</h2></div>
+            <ol>
+              {surveyFindings.map((finding, index) => (
+                <li key={finding.title}>
+                  <span>0{index + 1}</span>
+                  <div>
+                    <h3>{finding.title}</h3>
+                    <p>{finding.description}</p>
+                    <a className="finding-source" href={`./research/2609.11873v1.pdf#page=${finding.page}`} target="_blank" rel="noreferrer">{finding.source} <ArrowUpRight size={14} aria-hidden="true" /></a>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
         </article>
       </main>
       <Footer />
