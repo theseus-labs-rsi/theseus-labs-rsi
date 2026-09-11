@@ -203,7 +203,6 @@ main:focus { outline: none; }
 .back-link:hover { color: var(--accent); }
 .detail-hero { padding: 64px 0 76px; }
 .detail-hero h1 { max-width: 960px; margin: 0; font-family: var(--serif); font-size: clamp(2.625rem, 5.4vw, 4.625rem); font-weight: 400; line-height: 1.08; letter-spacing: -.04em; text-wrap: pretty; }
-.detail-subtitle { max-width: 820px; margin: 24px 0 0; color: var(--accent); font-family: var(--serif); font-size: 1.375rem; font-style: italic; line-height: 1.5; }
 .detail-lead { max-width: 760px; margin: 28px 0 0; color: var(--muted); font-size: 1.125rem; line-height: 1.8; }
 .detail-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 32px; }
 .detail-actions .primary-link { margin: 0; }
@@ -219,6 +218,9 @@ main:focus { outline: none; }
 .contributions li > span { padding-top: 4px; color: var(--accent); font-size: .75rem; }
 .contributions h3 { margin: 0 0 10px; font-family: var(--serif); font-size: 1.5rem; font-weight: 400; line-height: 1.2; letter-spacing: -.02em; }
 .contributions p { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.75; }
+.survey-findings { margin-top: 64px; }
+.finding-source { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; margin-top: 10px; color: var(--muted); font-size: .8125rem; line-height: 1.5; }
+.finding-source:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
 .roadmap-figure { margin: 48px 0 0; }
 .roadmap-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding-bottom: 20px; }
 .roadmap-heading > span { color: var(--muted); font-size: .75rem; letter-spacing: .075em; }
@@ -228,6 +230,7 @@ main:focus { outline: none; }
 .roadmap-image { display: block; cursor: zoom-in; }
 .roadmap-image img { width: 100%; height: auto; mix-blend-mode: multiply; }
 .roadmap-figure figcaption { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 24px; padding-top: 14px; color: var(--muted); font-size: .8125rem; line-height: 1.6; }
+.roadmap-figure figcaption > span { flex: 1 1 280px; }
 .roadmap-detail { padding-top: 36px; border-top: 1px solid var(--line); }
 
 .community-comments { padding-top: 56px; border-top: 1px solid var(--line); }
@@ -322,7 +325,6 @@ main:focus { outline: none; }
   .site-footer { padding-top: 30px; padding-bottom: 30px; gap: 16px; }
   .site-footer p { font-size: .9375rem; max-width: 230px; }
   .detail-hero h1 { font-size: clamp(2.375rem, 9vw, 2.875rem); }
-  .detail-subtitle { font-size: 1.25rem; }
   .detail-lead { font-size: 1rem; }
   .detail-actions { align-items: stretch; flex-direction: column; }
   .detail-actions a { width: 100%; }
