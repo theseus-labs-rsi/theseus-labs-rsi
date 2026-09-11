@@ -1,11 +1,30 @@
-// Replace these fictional examples with approved community comments when available.
+// User-provided editorial perspectives, displayed under pseudonyms.
 const comments = [
-  { name: 'Alex Morgan', initials: 'AM', quote: 'The interesting question is not just what a system learns, but how it changes the way it learns.' },
-  { name: 'Sam Chen', initials: 'SC', quote: 'A useful lens for thinking about the feedback loops behind more capable, adaptable AI systems.' },
-  { name: 'Jordan Lee', initials: 'JL', quote: 'I would love to see more open experiments connecting long-horizon learning with verifiable progress.' },
-  { name: 'Maya Patel', initials: 'MP', quote: 'The connection between experience, strategy, and improvement leaves plenty of room for new ideas.' },
-  { name: 'Taylor Brooks', initials: 'TB', quote: 'How do we know an improvement will last? That feels like a question worth building around.' },
-  { name: 'Riley Kim', initials: 'RK', quote: 'Looking forward to research that makes these evolving systems easier to understand and evaluate.' },
+  {
+    name: 'Echo',
+    initials: 'E',
+    quote: 'The bottleneck in self-improvement is often the quality of the feedback a system learns from. An enterprise agent needs to distinguish outdated knowledge, missing context, and faulty reasoning before it can improve reliably. Better diagnosis makes accumulated experience a more useful source of learning.',
+  },
+  {
+    name: 'Kernel',
+    initials: 'K',
+    quote: 'I expect AI engineering to become autonomous earlier than open-ended AI research because correctness and performance provide executable feedback. The recursive opportunity is to carry engineering experience across projects, so that each new model, hardware platform, or workload benefits from a better optimization process.',
+  },
+  {
+    name: 'Orbit',
+    initials: 'O',
+    quote: 'The most valuable experience for an agent may be the interaction that reveals what it still cannot do. RSI requires judgment about which experiences to seek, which lessons to retain, and when those lessons stop applying. Learning what to learn is a central part of becoming more autonomous.',
+  },
+  {
+    name: 'Relay',
+    initials: 'R',
+    quote: 'A production failure becomes especially valuable when it changes how the system handles an entire class of future failures. That requires turning individual corrections into reusable rules and skills, then testing them on unseen work. Human review can supply the feedback that makes this learning loop reliable.',
+  },
+  {
+    name: 'Atlas',
+    initials: 'A',
+    quote: 'Recursive research depends on what one generation leaves for the next. Successor agents need executable evidence, failed branches, and the assumptions behind a result. As research accelerates, verification and knowledge inheritance will increasingly determine whether progress compounds or errors accumulate.',
+  },
 ]
 
 export default function CommunityComments() {
@@ -13,17 +32,15 @@ export default function CommunityComments() {
     <section className="content-section community-comments" aria-labelledby="comments-title">
       <div className="section-heading">
         <div>
-          <p className="section-label">COMMUNITY NOTES</p>
-          <h2 id="comments-title">Ideas that keep evolving.</h2>
+          <p className="section-label">PERSPECTIVES</p>
+          <h2 id="comments-title">Perspectives on RSI.</h2>
         </div>
       </div>
-      <p className="comments-note" id="comments-note">Sample comments with fictional names and avatars.</p>
       <div
         className="comments-window"
         id="comments-window"
         role="region"
-        aria-label="Sample community comments"
-        aria-describedby="comments-note"
+        aria-label="Perspectives on recursive self-improvement"
         tabIndex={0}
       >
         <div className="comments-track">
@@ -33,7 +50,7 @@ export default function CommunityComments() {
                 <figure className="comment-card" key={comment.name}>
                   <figcaption>
                     <span className={`comment-avatar avatar-${index % 3}`} aria-hidden="true">{comment.initials}</span>
-                    <span><strong>{comment.name}</strong><span className="comment-role">Sample reader</span></span>
+                    <strong>{comment.name}</strong>
                   </figcaption>
                   <blockquote><p>“{comment.quote}”</p></blockquote>
                 </figure>
