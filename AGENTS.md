@@ -4,12 +4,10 @@
 
 This repository contains the Theseus Lab website, built with React 19, TypeScript, and Vite.
 
-- `src/main.tsx` mounts the application; `src/App.tsx` contains page components and hash-based navigation.
-- `src/testb/` contains the Hunyuan-inspired preview, mounted by `testb/index.html` at `/testb/`, with isolated components, styles, and display data.
-- `src/testa/` contains the Claude-inspired preview, mounted by `testa/index.html` at `/testa/`; the root homepage retains its original design.
-- `src/testc/` reuses the testa components and layout with a light-gray theme, mounted by `testc/index.html` at `/testc/`.
+- `index.html` is the single site entry. `src/main.tsx` mounts the application; `src/App.tsx` contains the homepage, report detail page, and hash-based navigation.
+- `src/components/CommunityComments.tsx` contains the scrolling RSI perspectives and their nicknames.
 - `src/data/research.ts` defines `ResearchItem` and research/blog records. The first record supplies the featured report and detail page; subsequent records populate the project list.
-- `src/styles.css` holds global styles and responsive layouts.
+- `src/styles.css` holds the light-gray theme, global styles, and responsive layouts.
 - `public/brand/` contains SVG branding; `public/research/` contains report images and PDFs.
 - `.github/workflows/deploy-pages.yml` builds and deploys to GitHub Pages. `dist/` is generated output.
 
@@ -19,7 +17,7 @@ Use Node.js 22 to match CI and npm with the committed `package-lock.json`.
 
 - `npm ci`: install dependencies from the lockfile.
 - `npm run dev`: start the Vite development server.
-- `npm run build`: check TypeScript and build `/`, `/testa/`, `/testb/`, and `/testc/` into `dist/`.
+- `npm run build`: check TypeScript and build the production site into `dist/`.
 - `npm run preview`: serve the production build locally after building.
 
 ## Coding Style & Naming Conventions
@@ -30,7 +28,7 @@ Keep TypeScript strict checks passing, remove unused declarations, and use expli
 
 ## Testing Guidelines
 
-There is currently no automated test framework or coverage threshold. Run `npm run build` before submitting changes. Inspect both `/` and `/testa/` on desktop and mobile, check hash routes such as `/testa/#/research/rsi-survey-2026`, and verify section anchors, images, PDF links, and external links. Preview assets use `../brand/` and `../research/` to share root assets.
+There is currently no automated test framework or coverage threshold. Run `npm run build` before submitting changes. Inspect the homepage on desktop and mobile, check navigation between `#/` and `#/research/rsi-survey-2026`, and verify section anchors, scrolling comments, images, PDF links, and external links. Public assets use relative paths such as `./brand/` and `./research/`.
 
 ## Commit & Pull Request Guidelines
 
