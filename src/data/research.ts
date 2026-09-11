@@ -20,7 +20,7 @@ export const researchItems: ResearchItem[] = [
     titleEn: 'Recursive Self-Improvement: Landscape, Trajectories and Open Questions',
     summary:
       'A structured view of the recursive self-improvement landscape, connecting current trends with a long-horizon map from execution and strategy to deployment and meta-improvement.',
-    image: './research/survey-cover-fig.png',
+    image: './research/roadmap.svg',
     status: 'published',
   },
   {
