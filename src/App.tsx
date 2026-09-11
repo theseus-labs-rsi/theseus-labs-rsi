@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { ArrowLeft, ArrowRight, ArrowUpRight, Github } from 'lucide-react'
 import { researchItems, type ResearchItem } from './data/research'
 import CommunityComments from './components/CommunityComments'
+import RoadmapFigure from './components/RoadmapFigure'
 
 const githubUrl = 'https://github.com/theseus-labs-rsi'
 const arxivUrl = 'https://arxiv.org/abs/2609.11873'
@@ -16,20 +17,36 @@ function Brand() {
 }
 
 function Header() {
+  const headerRef = useRef<HTMLElement>(null)
+
+  useLayoutEffect(() => {
+    const header = headerRef.current
+    if (!header) return
+    const updateHeight = () => {
+      document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`)
+    }
+    updateHeight()
+    const observer = new ResizeObserver(updateHeight)
+    observer.observe(header)
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <header className="site-header">
-      <a className="skip-link" href="#main-content" onClick={(event) => {
-        event.preventDefault()
-        document.getElementById('main-content')?.focus()
-      }}>Skip to content</a>
-      <Brand />
-      <nav aria-label="Main navigation">
-        <a href="#reports">Reports</a>
-        <a href="#research">Research</a>
-        <a className="nav-github" href={githubUrl} target="_blank" rel="noreferrer">
-          GitHub <ArrowUpRight size={14} aria-hidden="true" />
-        </a>
-      </nav>
+    <header className="site-header" ref={headerRef}>
+      <div className="header-inner">
+        <a className="skip-link" href="#main-content" onClick={(event) => {
+          event.preventDefault()
+          document.getElementById('main-content')?.focus()
+        }}>Skip to content</a>
+        <Brand />
+        <nav aria-label="Main navigation">
+          <a href="#reports">Reports</a>
+          <a href="#research">Research</a>
+          <a className="nav-github" href={githubUrl} target="_blank" rel="noreferrer">
+            GitHub <ArrowUpRight size={14} aria-hidden="true" />
+          </a>
+        </nav>
+      </div>
     </header>
   )
 }
@@ -70,17 +87,15 @@ function Home() {
             </div>
             <span>01 / 01</span>
           </div>
-          <a className="report-banner" href={`#/research/${report.slug}`}>
-            <div className="report-copy">
+          <article className="report-banner">
+            <a className="report-copy" href={`#/research/${report.slug}`}>
               <div className="report-meta"><span>{report.kind}</span><time>{report.date}</time></div>
               <h3>{report.title}</h3>
               <p>{report.summary}</p>
               <span className="inline-action">Read the report <ArrowRight size={17} aria-hidden="true" /></span>
-            </div>
-            <div className="report-visual">
-              <img src={report.image} alt="RSI long-horizon evolution map" />
-            </div>
-          </a>
+            </a>
+            <RoadmapFigure />
+          </article>
         </section>
 
         <section id="research" className="content-section research" aria-labelledby="research-title">
@@ -147,11 +162,7 @@ function ResearchDetail() {
             </ol>
           </section>
 
-          <figure className="map-figure">
-            <div><span>FIGURE 01</span><span>LONG-HORIZON EVOLUTION MAP</span></div>
-            <img src="./research/survey-cover-fig.png" alt="RSI evolution map from in-task iteration to meta-improvement" />
-            <figcaption>From L1 execution to L5 meta-improvement.</figcaption>
-          </figure>
+          <RoadmapFigure detailed />
         </article>
       </main>
       <Footer />
