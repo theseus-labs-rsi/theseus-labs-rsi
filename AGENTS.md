@@ -7,6 +7,7 @@ This repository contains the Theseus Lab website, built with React 19, TypeScrip
 - `src/main.tsx` mounts the application; `src/App.tsx` contains page components and hash-based navigation.
 - `src/testb/` contains the Hunyuan-inspired preview, mounted by `testb/index.html` at `/testb/`, with isolated components, styles, and display data.
 - `src/testa/` contains the Claude-inspired preview, mounted by `testa/index.html` at `/testa/`; the root homepage retains its original design.
+- `src/testc/` reuses the testa components and layout with a light-gray theme, mounted by `testc/index.html` at `/testc/`.
 - `src/data/research.ts` defines `ResearchItem` and research/blog records. The first record supplies the featured report and detail page; subsequent records populate the project list.
 - `src/styles.css` holds global styles and responsive layouts.
 - `public/brand/` contains SVG branding; `public/research/` contains report images and PDFs.
@@ -18,7 +19,7 @@ Use Node.js 22 to match CI and npm with the committed `package-lock.json`.
 
 - `npm ci`: install dependencies from the lockfile.
 - `npm run dev`: start the Vite development server.
-- `npm run build`: check TypeScript and build `/`, `/testa/`, and `/testb/` into `dist/`.
+- `npm run build`: check TypeScript and build `/`, `/testa/`, `/testb/`, and `/testc/` into `dist/`.
 - `npm run preview`: serve the production build locally after building.
 
 ## Coding Style & Naming Conventions
