@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ArrowLeft, ArrowRight, ArrowUpRight, Github } from 'lucide-react'
 import { researchItems, type ResearchItem } from './data/research'
+import CommunityComments from './components/CommunityComments'
 
 const githubUrl = 'https://github.com/theseus-labs-rsi'
 const arxivUrl = 'https://arxiv.org/abs/2609.11873'
@@ -9,7 +10,7 @@ function Brand() {
   return (
     <a className="brand" href="#/" aria-label="Theseus Lab home">
       <img src="./brand/icon-black.svg" alt="" />
-      <span>THESEUS LAB</span>
+      <span>Theseus Lab</span>
     </a>
   )
 }
@@ -17,11 +18,15 @@ function Brand() {
 function Header() {
   return (
     <header className="site-header">
+      <a className="skip-link" href="#main-content" onClick={(event) => {
+        event.preventDefault()
+        document.getElementById('main-content')?.focus()
+      }}>Skip to content</a>
       <Brand />
       <nav aria-label="Main navigation">
         <a href="#reports">Reports</a>
         <a href="#research">Research</a>
-        <a href={githubUrl} target="_blank" rel="noreferrer">
+        <a className="nav-github" href={githubUrl} target="_blank" rel="noreferrer">
           GitHub <ArrowUpRight size={14} aria-hidden="true" />
         </a>
       </nav>
@@ -31,10 +36,11 @@ function Header() {
 
 function HeroGraphic() {
   return (
-    <div className="hero-graphic">
-      <span className="logo-orbit" aria-hidden="true" />
+    <figure className="hero-graphic">
+      <div className="graphic-heading" aria-hidden="true"><span>THESEUS LAB</span><span>01 — ∞</span></div>
       <img src="./brand/full-black.svg" alt="Theseus Lab" />
-    </div>
+      <figcaption>Systems that improve how they improve.</figcaption>
+    </figure>
   )
 }
 
@@ -45,13 +51,13 @@ function Home() {
   return (
     <div className="site-shell">
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="kicker">RECURSIVE INTELLIGENCE SYSTEMS</p>
-            <h1 id="hero-title">Building intelligence<br />that can evolve.</h1>
+            <p className="kicker">RECURSIVE SELF-IMPROVEMENT</p>
+            <h1 id="hero-title">Building intelligence<br /><em>that can evolve.</em></h1>
             <p>Theseus Lab studies AI systems that learn from experience, revise their strategies, and improve through verifiable feedback.</p>
-            <a className="primary-link" href="#reports">Explore our work <ArrowRight size={17} /></a>
+            <a className="primary-link" href="#reports">Explore our work <ArrowRight size={17} aria-hidden="true" /></a>
           </div>
           <HeroGraphic />
         </section>
@@ -60,7 +66,7 @@ function Home() {
           <div className="section-heading">
             <div>
               <p className="section-label">LATEST</p>
-              <h2 id="reports-title">Featured Report</h2>
+              <h2 id="reports-title">Featured report</h2>
             </div>
             <span>01 / 01</span>
           </div>
@@ -69,7 +75,7 @@ function Home() {
               <div className="report-meta"><span>{report.kind}</span><time>{report.date}</time></div>
               <h3>{report.title}</h3>
               <p>{report.summary}</p>
-              <span className="inline-action">Read the report <ArrowRight size={17} /></span>
+              <span className="inline-action">Read the report <ArrowRight size={17} aria-hidden="true" /></span>
             </div>
             <div className="report-visual">
               <img src={report.image} alt="RSI long-horizon evolution map" />
@@ -89,6 +95,7 @@ function Home() {
             {projects.map((project) => <ProjectRow key={project.slug} project={project} />)}
           </div>
         </section>
+        <CommunityComments />
       </main>
       <Footer />
     </div>
@@ -117,8 +124,8 @@ function ResearchDetail() {
   return (
     <div className="site-shell detail-shell">
       <Header />
-      <main className="detail-main">
-        <a className="back-link" href="#/"><ArrowLeft size={17} /> Back to home</a>
+      <main className="detail-main" id="main-content" tabIndex={-1}>
+        <a className="back-link" href="#/"><ArrowLeft size={17} aria-hidden="true" /> Back to home</a>
         <article>
           <header className="detail-hero">
             <p className="section-label">FEATURED REPORT · ARXIV:2609.11873</p>
@@ -126,8 +133,8 @@ function ResearchDetail() {
             <p className="detail-subtitle">{report.titleEn}</p>
             <p className="detail-lead">{report.summary}</p>
             <div className="detail-actions">
-              <a className="primary-link" href={arxivUrl} target="_blank" rel="noreferrer">View on arXiv <ArrowUpRight size={17} /></a>
-              <a className="secondary-link" href="./research/2609.11873v1.pdf" target="_blank">Read PDF</a>
+              <a className="primary-link" href={arxivUrl} target="_blank" rel="noreferrer">View on arXiv <ArrowUpRight size={17} aria-hidden="true" /></a>
+              <a className="secondary-link" href="./research/2609.11873v1.pdf" target="_blank" rel="noreferrer">Read PDF <ArrowUpRight size={17} aria-hidden="true" /></a>
             </div>
           </header>
 
@@ -157,7 +164,7 @@ function Footer() {
     <footer className="site-footer">
       <Brand />
       <p>Systems that improve how they improve.</p>
-      <a href={githubUrl} target="_blank" rel="noreferrer" aria-label="Theseus Lab GitHub"><Github size={18} /></a>
+      <a className="footer-github" href={githubUrl} target="_blank" rel="noreferrer" aria-label="Theseus Lab GitHub"><Github size={18} aria-hidden="true" /></a>
     </footer>
   )
 }
@@ -165,9 +172,20 @@ function Footer() {
 export default function App() {
   const [hash, setHash] = useState(window.location.hash)
   useEffect(() => {
-    const update = () => { setHash(window.location.hash); window.scrollTo({ top: 0, behavior: 'instant' }) }
+    const update = () => setHash(window.location.hash)
     window.addEventListener('hashchange', update)
     return () => window.removeEventListener('hashchange', update)
   }, [])
+
+  useEffect(() => {
+    const target = document.getElementById(hash.slice(1))
+    if (target) {
+      target.scrollIntoView({ behavior: 'instant', block: 'start' })
+      if (hash === '#main-content') target.focus({ preventScroll: true })
+    } else {
+      window.scrollTo({ top: 0, behavior: 'instant' })
+    }
+  }, [hash])
+
   return hash.startsWith('#/research/') ? <ResearchDetail /> : <Home />
 }
