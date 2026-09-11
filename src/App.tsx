@@ -8,7 +8,7 @@ const arxivUrl = 'https://arxiv.org/abs/2609.11873'
 function Brand() {
   return (
     <a className="brand" href="#top" aria-label="Theseus Lab home">
-      <img src="/brand/icon-white.svg" alt="" />
+      <img src="./brand/icon-white.svg" alt="" />
       <span>THESEUS</span>
       <small>LAB</small>
     </a>
@@ -166,7 +166,7 @@ function ResearchDetail() {
               <a className="button button-primary" href={arxivUrl} target="_blank" rel="noreferrer">
                 View on arXiv <ArrowUpRight size={17} aria-hidden="true" />
               </a>
-              <a className="button button-secondary" href="/research/2609.11873v1.pdf" target="_blank">
+              <a className="button button-secondary" href="./research/2609.11873v1.pdf" target="_blank">
                 Read the PDF
               </a>
             </div>
@@ -186,7 +186,7 @@ function ResearchDetail() {
 
           <figure className="map-figure">
             <div className="figure-label"><span>FIGURE 01</span><span>LONG-HORIZON EVOLUTION MAP</span></div>
-            <img src="/research/survey-cover-fig.png" alt="RSI evolution map from in-task iteration to meta-improvement" />
+            <img src="./research/survey-cover-fig.png" alt="RSI evolution map from in-task iteration to meta-improvement" />
             <figcaption>A long-horizon view of RSI systems, progressing from L1 execution to L5 meta-improvement.</figcaption>
           </figure>
         </article>
