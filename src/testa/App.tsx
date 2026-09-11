@@ -53,7 +53,7 @@ function Home() {
       <main id="main-content" tabIndex={-1}>
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="kicker">RECURSIVE INTELLIGENCE SYSTEMS</p>
+            <p className="kicker">RECURSIVE SELF-IMPROVEMENT</p>
             <h1 id="hero-title">Building intelligence<br /><em>that can evolve.</em></h1>
             <p>Theseus Lab studies AI systems that learn from experience, revise their strategies, and improve through verifiable feedback.</p>
             <a className="primary-link" href="#reports">Explore our work <ArrowRight size={17} aria-hidden="true" /></a>
